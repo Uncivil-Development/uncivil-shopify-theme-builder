@@ -1,0 +1,63 @@
+* Tasks
+** Init
+Options: Structural (src/assets, src/snippets, etc.), Uncivil Theme (src/assets/styles/settings, src/snippets/layouts/stack/stack.liquid)
+
+*** TODO When I run ~uncivil-shopify-theme-builder init~ (maybe shorten it? ~ustb init~? or maybe the long name is fine)  create the initial directory structure in src/ [0/5]
+- [ ] Set the project up to be installable via nmp
+- [ ] Set the project up to be a command line tool with options
+- [ ] On init, give the option to initialize in current directory (moving all files in current directory to the appropriate locations) or to create a new directory
+- [ ] On init, build the src directory structure: src/assets/styles/settings, etcl
+- [ ] On init, create the configuration files (eslint, prettierrc, shopify theme check, package.json, tailwind config, typescript config, git directory, pre-commit hooks, etc.)
+
+** Dev
+** Build
+** Backfill
+** Create
+Create section file, block file with standard schemas, etc.
+
+* Tools
+** StoryBook
+** LiquidJS
+** Jest
+** Cypress
+
+* Gulp Tasks
+
+
+* Temp Notes
+** Gulp Plugins that look interesting
+*** [[https://www.npmjs.com/package/gulp-header][gulp-header]], [[https://www.npmjs.com/package/gulp-footer][gulp-footer]], [[https://www.npmjs.com/package/gulp-wrap][gulp-wrap]], [[https://www.npmjs.com/package/gulp-insert][gulp-insert]], [[https://www.npmjs.com/package/gulp-concat][gulp-concat]]
+Can create templates to be programmatically filled and inserted at the beginning/end of a file
+Would be good for adding schema, style, etc. to the beginning/end of new files
+Would also work for my earlier ideas to separate css, js, and schemas into css, js, and json files for a component and then insert them into the file during build time
+*** [[https://www.npmjs.com/package/gulp-if][gulp-if]], [[https://www.npmjs.com/package/gulp-ignore][gulp-ignore]]
+Conditional filtering of content, files
+Could be good for error handling, merge conflict handling, etc.
+*** [[https://www.npmjs.com/package/gulp-svgmin][gulp-svgmin]], [[https://www.npmjs.com/package/gulp-imagemin][gulp-imagemin]], [[https://www.npmjs.com/package/gulp-strip-comments][gulp-strip-comments]], [[https://www.npmjs.com/package/gulp-clean-css][gulp-clean-css]], [[https://www.npmjs.com/package/gulp-htmlmin][gulp-htmlmin]], [[https://www.npmjs.com/package/gulp-csso][gulp-csso]], [[https://www.npmjs.com/package/gulp-cssnano][gulp-cssnano]], 
+optimize files
+*** [[https://www.npmjs.com/package/gulp-sass][gulp-sass]], [[https://www.npmjs.com/package/gulp-autoprefixer][gulp-autoprefixer]], [[https://www.npmjs.com/package/gulp-dart-sass][gulp-dart-sass]]
+css handling
+*** [[https://www.npmjs.com/package/gulp-eslint][gulp-eslint]], [[https://www.npmjs.com/package/gulp-typescript][gulp-typescript]], [[https://www.npmjs.com/package/gulp-jshint][gulp-jshint]]
+js handling
+*** [[https://www.npmjs.com/package/gulp-replace][gulp-replace]], [[https://www.npmjs.com/package/gulp-json-editor][gulp-json-editor]]
+could be good for updating global settings, keeping schemas and templates in sync, etc.
+*** [[https://www.npmjs.com/package/gulp-rename][gulp-rename]], [[https://www.npmjs.com/package/gulp-flatten][gulp-flatten]], [[https://www.npmjs.com/package/gulp-flatmap][gulp-flatmap]]
+rename files easily in gulp tasks. would probably be necessary for backfilling and building
+*** [[https://www.npmjs.com/package/gulp-sourcemaps][gulp-sourcemaps]]
+would be good for managing file mappings (file a to file b)
+this would especially be useful if there was any sort of renaming of files (i.e. namespacing with prefixes, etc.)
+*** [[https://www.npmjs.com/package/gulp-shell][gulp-shell]], [[https://www.npmjs.com/package/gulp-run][gulp-run]]
+run shell commands. would probably be useful for shell workflows if there are any (although for maximum cross-compatibility it would probably be better to use only node.js code)
+*** [[https://www.npmjs.com/package/gulp-notify][gulp-notify]]
+would be great for notifying when errors occur in build output so that you don't have to keep an eye on your terminal
+*** [[https://www.npmjs.com/package/gulp-prettier][gulp-prettier]]
+would be good for prettifying output (make sure that code handoff gives high quality code)
+*** [[https://www.npmjs.com/package/gulp-inject][gulp-inject]]
+might be neat for handling script srcs and link hrefs easily
+*** [[https://www.npmjs.com/package/gulp-git][gulp-git]]
+could be great for initialization and the such
+*** [[https://www.npmjs.com/package/gulp-data][gulp-data]]
+Seems like it might be necessary in conjunction with LiquidJS for Storybook rendering
+
+
+

@@ -1,0 +1,16 @@
+{
+  "name": "uncivil-shopify-theme-builder",
+  "version": "1.0.0",
+  "description": "A Theme Initializer and Builder for Shopify Liquid Themes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "shopify",
+    "liquidjs",
+    "liquid"
+  ],
+  "author": "Uncivil Development",
+  "license": "GPL-3.0-or-later"
+}
