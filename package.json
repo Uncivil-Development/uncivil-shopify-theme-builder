@@ -2,10 +2,12 @@
   "name": "uncivil-shopify-theme-builder",
   "version": "1.0.0",
   "description": "A Theme Initializer and Builder for Shopify Liquid Themes",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "keywords": [
     "shopify",
