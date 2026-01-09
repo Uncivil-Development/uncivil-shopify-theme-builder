@@ -1,9 +1,12 @@
+* Installation
+This package is currently in testing, so to test it out clone the repo first and then create a separate repository where you'll run ~npm install /path/to/uncivil-shopify-theme-builder/repo~.
+
 * Tasks
 ** Init
 Options: Structural (src/assets, src/snippets, etc.), Uncivil Theme (src/assets/styles/settings, src/snippets/layouts/stack/stack.liquid)
 
 *** TODO When I run ~uncivil-shopify-theme-builder init~ (maybe shorten it? ~ustb init~? or maybe the long name is fine)  create the initial directory structure in src/ [0/5]
-- [ ] Set the project up to be installable via nmp
+- [ ] Set the project up to be installable via npm
 - [ ] Set the project up to be a command line tool with options
 - [ ] On init, give the option to initialize in current directory (moving all files in current directory to the appropriate locations) or to create a new directory
 - [ ] On init, build the src directory structure: src/assets/styles/settings, etcl
@@ -21,6 +24,29 @@ Create section file, block file with standard schemas, etc.
 ** Jest
 ** Cypress
 
+** MCP Servers/AI Notes
+
+** Handling CSS
+*** [[https://github.com/parcel-bundler/lightningcss][LightningCSS]]
+Parse, minify, prefix, syntax lower, and locally scope CSS
+*** [[https://www.npmjs.com/package/gulp-sass][gulp-sass]], [[https://www.npmjs.com/package/gulp-autoprefixer][gulp-autoprefixer]], [[https://www.npmjs.com/package/gulp-dart-sass][gulp-dart-sass]]
+css handling
+***  [[https://www.npmjs.com/package/gulp-csso][gulp-csso]], [[https://www.npmjs.com/package/gulp-cssnano][gulp-cssnano]], [[https://www.npmjs.com/package/gulp-clean-css][gulp-clean-css]]
+CSS Optimization
+*** [[https://stylelint.io/][Stylelint]]
+**** Plugins
+- [[https://www.npmjs.com/package/stylelint-plugin-use-baseline][Use Baseline]]
+- [[https://www.npmjs.com/package/stylelint-no-indistinguishable-colors][No Indistinguishable Colors]]
+- [[https://www.npmjs.com/package/stylelint-plugin-logical-css][Logical CSS]]
+- [[https://www.npmjs.com/package/stylelint-order][Property Ordering]]
+- [[https://www.npmjs.com/package/stylelint-scss][SCSS Rules]]
+- [[https://www.npmjs.com/package/stylelint-declaration-strict-value][Require Variables For Certain Declarations]]
+- [[https://www.npmjs.com/package/stylelint-scales][Allow Only Certain Values for Some Properties]]
+- [[https://www.npmjs.com/package/stylelint-value-no-unknown-custom-properties][Detect Unknown Custom Properties]]
+
+
+
+
 * Gulp Tasks
 
 
@@ -33,11 +59,9 @@ Would also work for my earlier ideas to separate css, js, and schemas into css, 
 *** [[https://www.npmjs.com/package/gulp-if][gulp-if]], [[https://www.npmjs.com/package/gulp-ignore][gulp-ignore]]
 Conditional filtering of content, files
 Could be good for error handling, merge conflict handling, etc.
-*** [[https://www.npmjs.com/package/gulp-svgmin][gulp-svgmin]], [[https://www.npmjs.com/package/gulp-imagemin][gulp-imagemin]], [[https://www.npmjs.com/package/gulp-strip-comments][gulp-strip-comments]], [[https://www.npmjs.com/package/gulp-clean-css][gulp-clean-css]], [[https://www.npmjs.com/package/gulp-htmlmin][gulp-htmlmin]], [[https://www.npmjs.com/package/gulp-csso][gulp-csso]], [[https://www.npmjs.com/package/gulp-cssnano][gulp-cssnano]], 
+*** [[https://www.npmjs.com/package/gulp-svgmin][gulp-svgmin]], [[https://www.npmjs.com/package/gulp-imagemin][gulp-imagemin]], [[https://www.npmjs.com/package/gulp-strip-comments][gulp-strip-comments]],  [[https://www.npmjs.com/package/gulp-htmlmin][gulp-htmlmin]],
 optimize files
-*** [[https://www.npmjs.com/package/gulp-sass][gulp-sass]], [[https://www.npmjs.com/package/gulp-autoprefixer][gulp-autoprefixer]], [[https://www.npmjs.com/package/gulp-dart-sass][gulp-dart-sass]]
-css handling
-*** [[https://www.npmjs.com/package/gulp-eslint][gulp-eslint]], [[https://www.npmjs.com/package/gulp-typescript][gulp-typescript]], [[https://www.npmjs.com/package/gulp-jshint][gulp-jshint]]
+*** [[https://www.npmjs.com/package/gulp-eslint][gulp-eslint]], [[https://www.npmjs.com/package/gulp-typescript][gulp-typescript]], [[https://www.npmjs.com/package/gulp-jshint][gulp-jshint]], [[https://github.com/deshaw/gulp-jsdoc3][gulp-jsdoc3]]
 js handling
 *** [[https://www.npmjs.com/package/gulp-replace][gulp-replace]], [[https://www.npmjs.com/package/gulp-json-editor][gulp-json-editor]]
 could be good for updating global settings, keeping schemas and templates in sync, etc.
@@ -59,5 +83,38 @@ could be great for initialization and the such
 *** [[https://www.npmjs.com/package/gulp-data][gulp-data]]
 Seems like it might be necessary in conjunction with LiquidJS for Storybook rendering
 
-
-
+** Other Command Line Utilities that Might Be Worth Checking Out
+*** [[https://github.com/chalk/chalk][Chalk]], [[https://github.com/sindresorhus/ansi-escapes][Ansi Escapes]], [[https://github.com/sindresorhus/boxen][Boxen]]
+Colorize/Stylize command line output
+*** [[https://github.com/sindresorhus/meow][Meow]], [[https://github.com/yargs/yargs][Yargs]], [[https://github.com/SBoudrias/Inquirer.js][Inquirer]], [[https://github.com/sindresorhus/yn][Yn]], 
+Parse arguments and flags, simple CLI scaffolding
+*** [[https://github.com/google/zx][zx]]
+Write shell commands easily in JS (ex. ~await $`cat package.json | grep name`~)
+*** [[https://github.com/jsdoc/jsdoc][jsdoc]]
+Generate documentation for js files
+*** [[https://github.com/sindresorhus/del][del]]
+Safer file and directory deletion with support for multiple files and globbing
+*** [[https://github.com/paulmillr/chokidar][chokidar]]
+Cross-Platform file watching
+*** [[https://github.com/ianstormtaylor/superstruct][superstruct]], [[https://github.com/colinhacks/zod][zod]]
+validate data at runtime (useful for REST/GraphQL APIs as well as internal data structures)
+*** [[https://github.com/ajv-validator/ajv][Ajv]]
+Validate JSON schema. Could be useful for liquid schema validation and better hints about where problems are.
+*** [[https://github.com/inikulin/parse5?tab=readme-ov-file][parse5]]
+Validate HTML. Probably useful for making sure liquid files compile correctly when trying to set up Storybook
+*** [[https://babeljs.io/docs/][Babel]]
+Compile JS
+*** [[https://github.com/mochajs/mocha][Mocha]], [[https://github.com/microsoft/playwright][Playwright]], [[https://github.com/jsdom/jsdom][JSDom]]
+Testing code
+*** [[https://github.com/motdotla/dotenv][Dotenv]]
+Might need it, idk
+*** [[https://github.com/typicode/husky][Husky]]
+Improved commits and commit hooks
+*** [[https://github.com/lodash/lodash][lodash]], [[https://github.com/immutable-js/immutable-js][Immutable JS]]
+JS Utility Functions, great for functional programming
+*** [[https://github.com/debug-js/debug][Debug]], [[https://github.com/watson/console-log-level][Console Log Level]], [[https://github.com/guigrpa/storyboard][Storyboard]]
+debugging JS code, useful for separating debugging environments (compared to console.log)
+*** [[https://github.com/nodejs/llnode][LLNode]]
+Node plugin for LLDB debugger (compatible with Emacs Grand Unified Debugger library (GUD)
+*** [[https://github.com/sfninja/thetool][TheTool]]
+Performance profiling for node apps in a Chrome DevTools friendly format
